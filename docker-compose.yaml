@@ -4,49 +4,49 @@ networks:
     name: roboshop
   services:
     mongodb:
-      image: joindevops/mongodb:v1
+      image: anjuma11/mongodb:v1
       container-name: mongodb
     redis:
       image: redis:7
       container-name: redis
     mysql:
-      image: joindevops/mysql:v1
+      image: anjuma11/mysql:v1
       container-name: mysql
-    rabbitmq:
-      image: joindevops/rabbitmq:v1
-      container-name: rabbitmq
+    # rabbitmq:
+    #   image: anjuma11/rabbitmq:v1
+    #   container-name: rabbitmq
     catalogue:
-      image: joindevops/catalogue:v1
+      image: anjuma11/catalogue:v1
       container-name: catalogue
       depends_on:
       - mongodb
     cart:
-      image: joindevops/cart:v1
+      image: anjuma11/cart:v1
       container-name: cart
       depends_on:
       - catalogue
       - redis
     user:
-      image: joindevops/user:v1
+      image: anjuma11/user:v1
       container-name: user
       depends_on:
       - redis
       - mongodb
-    payment:
-      image: joindevops/payment:v1
-      container-name: payment
-      depends_on:
-      - cart
-      - user
-      - rabbitmq
+    # payment:
+    #   image: anjuma11/payment:v1
+    #   container-name: payment
+    #   depends_on:
+    #   - cart
+    #   - user
+    #   - rabbitmq
     shipping:
-      image: joindevops/shipping:v1
+      image: anjuma11/shipping:v1
       container-name: shipping
       depends_on:
       - mysql
       - cart
     # frontend:
-    #   image: joindevops/frontend:v1
+    #   image: anjuma11/frontend:v1
     #   container-name: frontend
     #   ports:
     #   - "80:80"
