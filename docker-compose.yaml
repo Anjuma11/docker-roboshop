@@ -58,7 +58,7 @@ services:
     - rabbitmq
     - user
   frontend:
-    image: anjuma11/forntend:v1
+    image: anjuma11/frontend:v1
     container_name: frontend
     ports:
     - "80:80"
