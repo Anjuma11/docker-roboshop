@@ -3,11 +3,11 @@ networks:
     driver: bridge
     name: roboshop
     #external: true
-  volumes:
-    mongodb:
-    mysql:
-    rabbitmq:
-    redis:
+volumes:
+  mongodb:
+  mysql:
+  rabbitmq:
+  redis:
 services:
   mongodb:
     image: anjuma11/mongodb:v1
