@@ -6,33 +6,33 @@ networks:
 services:
   mongodb:
     image: anjuma11/mongodb:v1
-    container-name: mongodb
+    container_name: mongodb
   redis:
     image: redis:7
-    container-name: redis
+    container_name: redis
   mysql:
     image: anjuma11/mysql:v1
-    container-name: mysql
+    container_name: mysql
   catalogue:
     image: anjuma11/catalogue:v1
-    container-name: catalogue
+    container_name: catalogue
     depends_on:
     - mongodb
   cart:
     image: anjuma11/cart:v1
-    container-name: cart
+    container_name: cart
     depends_on:
     - catalogue
     - redis
   user:
     image: anjuma11/user:v1
-    container-name: user
+    container_name: user
     depends_on:
     - redis
     - mongodb
   shipping:
     image: anjuma11/shipping:v1
-    container-name: shipping
+    container_name: shipping
     depends_on:
     - mysql
     - cart
