@@ -7,7 +7,7 @@ networks:
       image: joindevops/mongodb:v1
       container-name: mongodb
     redis:
-      image: joindevops/redis:v1
+      image: redis:7
       container-name: redis
     mysql:
       image: joindevops/mysql:v1
@@ -45,15 +45,15 @@ networks:
       depends_on:
       - mysql
       - cart
-    frontend:
-      image: joindevops/frontend:v1
-      container-name: frontend
-      ports:
-      - "80:80"
-      depends_on:
-      - catalogue
-      - cart
-      - user
-      - payment
-      - shipping
+    # frontend:
+    #   image: joindevops/frontend:v1
+    #   container-name: frontend
+    #   ports:
+    #   - "80:80"
+    #   depends_on:
+    #   - catalogue
+    #   - cart
+    #   - user
+    #   - payment
+    #   - shipping
     
