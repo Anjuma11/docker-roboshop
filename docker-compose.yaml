@@ -57,3 +57,14 @@ services:
     - cart
     - rabbitmq
     - user
+  frontend:
+    image: anjuma11/forntend:v1
+    container_name: frontend
+    ports:
+    - "80:80"
+    depends_on:
+    - catalogue
+    - cart
+    - user
+    - payment
+    - shipping
