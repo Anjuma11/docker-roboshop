@@ -10,6 +10,8 @@ ENV CART_ENDPOINT="cart:8080"\
 CMD ["java","-jar","shipping.jar"]
 
 
+
+
 # FROM maven AS builder
 # WORKDIR /opt/server
 # COPY src /opt/server/src
