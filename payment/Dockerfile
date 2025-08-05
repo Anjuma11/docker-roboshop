@@ -4,7 +4,7 @@ COPY requirements.txt .
 COPY *.py .
 COPY payment.ini .
 RUN pip3 install -r requirements.txt
-# ENV CART_HOST="CART_HOST=cart"\
+# ENV CART_HOST="cart"\
 #     CART_PORT="8080"\
 #     USER_HOST="user"\
 #     USER_PORT="8080"\
