@@ -17,6 +17,8 @@ COPY requirements.txt .
 RUN pip3 install --no-cache-dir --prefix=/install -r requirements.txt
 
 
+
+
 # Stage 2: Final image
 FROM python:3.9.23-alpine3.22
 EXPOSE 8080
@@ -25,7 +27,7 @@ WORKDIR /opt/server
 RUN apk add --no-cache pcre
 # Create app user
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
-#USER roboshop
+USER roboshop
 # Copy installed Python packages from builder
 COPY --from=builder /install /usr/local
 # Copy application code
